@@ -13,13 +13,16 @@ group :development, :test do
   gem 'capybara'
   gem 'wdm', :require => false
   gem 'win32console'
+  gem 'guard-rspec'
+  gem 'rb-fchange', '0.0.5'
+  gem 'rb-notifu', '0.0.4'
 end
 
 group :test do
   gem 'faker'
   gem 'capybara'
-  gem 'guard-rspec'
   gem 'launchy'
+  gem 'database_cleaner'
 end
 
 group :production do
