@@ -15,7 +15,7 @@ describe "Static Pages" do
     it "displays a link to the previous day" do 
       page.find('h1').should have_selector('a', text: '<<')
       click_link '<<'
-      page.find('header').should have_selector('h1', text: "#{Date.yesterday.strftime('%A, %B %d, %Y')}")
+      page.should have_selector('h1', text: "#{Date.yesterday.strftime('%A, %B %d, %Y')}")
     end
 
     it "displays a link to the next day" do 
