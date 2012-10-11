@@ -1,1 +1,5 @@
-<h1>A/V Schedule</h1>
+<h1>
+  <%= link_to '<<', Date.yesterday.strftime('%A, %B %d, %Y') %>
+  <%= Date.today.strftime('%A, %B %d, %Y') %>
+  <%= link_to '>>', Date.tomorrow.strftime('%A, %B %d, %Y') %>
+</h1>
