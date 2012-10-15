@@ -1,0 +1,22 @@
+<%= form_for(@task) do |t| %>
+  
+  <%= t.label :day %>
+  <%= t.text_field :day %>
+
+  <%= t.label :room %>
+  <%= t.text_field :room %> 
+
+  <%= t.label :begin_time, "Begin" %>
+  <%= t.text_field :begin_time %> 
+
+  <%= t.label :end_time, "End" %>
+  <%= t.text_field :end_time %> 
+
+  <%= t.label :gear %>
+  <%= t.text_field :gear  %> 
+
+  <%= t.label :day %>
+  <%= t.text_field :day %> 
+
+  <%= t.submit "Create task", class: "btn btn-large btn-primary" %>
+<% end %>
