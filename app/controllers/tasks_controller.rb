@@ -1,7 +1,7 @@
 class TasksController < ApplicationController
 
   def index
-
+    @tasks = Task.all
   end
 
   def new
@@ -19,13 +19,22 @@ class TasksController < ApplicationController
   end
 
   def edit
-  end
-
-  def show
     @task = Task.find(params[:id])
   end
 
   def update
+    @task = Task.find(params[:id])
+
+    if @task.update_attributes(params[:task])
+      redirect_to @task
+    else
+      render 'edit'
+    end
+
+  end
+
+  def show
+    @task = Task.find(params[:id])
   end
 
   def destroy 

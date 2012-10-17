@@ -1,1 +1,8 @@
-Hello
+<ul>
+<%= @tasks.each do |t| %>
+  <li><%= t.day %> | <%= t.room %> | <%= t.begin_time %> | 
+      <%= t.end_time %> | <%= t.gear %> | <%= t.preset %>
+      <%= t.setup %> | <%= t.strike %> | <%= t.notes %>
+  </li>
+<% end %>
+</ul>
