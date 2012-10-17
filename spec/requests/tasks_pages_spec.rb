@@ -66,7 +66,7 @@ describe "Task Pages" do
       let(:t2) { FactoryGirl.create(:t2, room: "room 2") }
       before { visit tasks_path } 
   
-      it { should have_selector('l1', "#{task.day}") }
-      it { should have_selector('li', "#{t2.day}") }
+      it { should have_selector('l1', text: "#{task.day} | #{task.room}") }
+      it { should have_selector('li', text: "#{t2.day} | #{t2.room}") }
   end
 end
