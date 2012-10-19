@@ -42,4 +42,10 @@ describe Task do
     before { @task.room = nil } 
     it { should_not be_valid } 
   end
+
+  context "has a valid factory" do 
+    FactoryGirl.create(:task).shoud be_valid
+  end
+
+  
 end

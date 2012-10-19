@@ -63,7 +63,7 @@ describe "Task Pages" do
     end
 
     describe "Shows the index of Tasks" do 
-      let(:t2) { FactoryGirl.create(:t2, room: "room 2") }
+      let(:t2) { FactoryGirl.create(:task, room: "room 2") }
       before { visit tasks_path } 
   
       it { should have_selector('l1', text: "#{task.day} | #{task.room}") }
