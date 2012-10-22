@@ -43,9 +43,8 @@ describe Task do
     it { should_not be_valid } 
   end
 
-  context "has a valid factory" do 
-    FactoryGirl.create(:task).shoud be_valid
+  it "has a valid factory" do
+    FactoryGirl.create(:task).should be_valid
   end
-
   
 end

@@ -23,6 +23,12 @@ describe "Task Pages" do
           expect { click_button submit }.to change(Task, :count).by(1)
         end
       end
+
+      context "with invalid information" do 
+        it "reloads new and displays errors" do 
+          expect { click_button submit }.to change(Task, :count).by(0)
+        end
+      end
     end
   
     describe "Shows a Task" do 
@@ -32,7 +38,7 @@ describe "Task Pages" do
   
         it { should have_selector('h1', text: "#{task.id}") }
         it { should have_selector('li', text: "#{task.day}") }
-        it { should have_selector('li', text: "#{task.room}") }
+        it { should have_selector('li', text: task.room) }
         it { should have_selector('li', text: "#{task.begin_time}") }
         it { should have_selector('li', text: "#{task.end_time}") }
         it { should have_selector('li', text: "#{task.gear}") }
@@ -66,7 +72,7 @@ describe "Task Pages" do
       let(:t2) { FactoryGirl.create(:task, room: "room 2") }
       before { visit tasks_path } 
   
-      it { should have_selector('l1', text: "#{task.day} | #{task.room}") }
-      it { should have_selector('li', text: "#{t2.day} | #{t2.room}") }
+      it { should have_selector('li', text: task.room) }
+      it { should have_selector('li', text: t2.room) }
   end
 end

@@ -3,3 +3,30 @@
   <%= @date.strftime('%A, %B %d, %Y') %>
   <%= link_to '>>', date: @date.next_day %>
 </h1>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Room</th>
+      <th>Time</th>
+      <th>Gear</th>
+      <th>Preset</th>
+      <th>Setup</th>
+      <th>Strike</th>
+      <th>Notes</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @tasks.each do |task| %>
+      <tr>
+        <td><%= task.room %></td>
+        <td><%= task.begin_time %> - <%= task.end_time %></td>
+        <td><%= task.gear %></td>
+        <td><%= task.preset %></td>
+        <td><%= task.setup %></td>
+        <td><%= task.strike %></td>
+        <td><%= task.notes %></td>
+      </tr>
+    <% end %>    
+  </tbody>
+</table>

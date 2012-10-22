@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'rails', '3.2.7'
+gem 'jquery-rails'
 #gem 'devise'
 gem 'bcrypt-ruby'
 
@@ -11,11 +12,18 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'factory_girl_rails'
   gem 'capybara'
-  gem 'wdm', :require => false
-  gem 'win32console'
   gem 'guard-rspec'
-  gem 'rb-fchange', '0.0.5'
-  gem 'rb-notifu', '0.0.4'
+  gem 'therubyracer'
+  gem 'rb-inotify', '~> 0.8.8'
+  #gem 'wdm', :require => false
+  #gem 'win32console', :require => false
+  #gem 'rb-fchange', '0.0.5', :require => false
+  #gem 'rb-notifu', '0.0.4', :require => false
+end
+
+group :development do
+  gem 'rails_best_practices'
+  #gem 'metrical', :git => "git://github.com/bkleinen/metrical.git"
 end
 
 group :test do
@@ -23,6 +31,7 @@ group :test do
   gem 'capybara'
   gem 'launchy'
   gem 'database_cleaner'
+  gem "simplecov", :require => false  
 end
 
 group :production do
@@ -37,7 +46,7 @@ group :assets do
   gem 'jquery-ui-rails'
 end
 
-gem 'jquery-rails'
+
 #gem 'cloudfoundry-jquery-rails'
 
 # To use ActiveModel has_secure_password
