@@ -1,5 +1,5 @@
 <ul>
 <% @tasks.each do |t| %>
-  <li><%= t.day %> | <%= t.room %></li>
+  <li id=<%= t.id %>><%= t.room %></li>
 <% end %>
 </ul>

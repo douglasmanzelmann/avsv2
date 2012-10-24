@@ -4,7 +4,7 @@ require 'faker'
 FactoryGirl.define do
   factory :task do |t|
     t.day { Date.today }
-    t.room { Faker::Lorem.words(num = 1) }
+    t.room "6W-002"
     t.begin_time "2012-10-11 15:10:19"
     t.end_time "2012-10-11 15:10:19"
     t.gear "LCD"

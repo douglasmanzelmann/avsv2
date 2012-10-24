@@ -12,6 +12,7 @@ class TasksController < ApplicationController
     @task = Task.new(params[:task])
 
     if @task.save
+      flash[:success] = "Task saved"
       redirect_to root_path
     else
       render 'new'
@@ -26,11 +27,11 @@ class TasksController < ApplicationController
     @task = Task.find(params[:id])
 
     if @task.update_attributes(params[:task])
+      flash[:success] = "Task updated"
       redirect_to @task
     else
       render 'edit'
     end
-
   end
 
   def show
