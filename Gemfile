@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 gem 'rails', '3.2.7'
 gem 'jquery-rails'
-#gem 'devise'
+gem 'devise'
 gem 'bcrypt-ruby'
 
 

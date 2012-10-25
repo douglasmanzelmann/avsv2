@@ -6,4 +6,7 @@ class Task < ActiveRecord::Base
   validates :end_time, presence: true
   validates :gear, presence: true
   validates :day, presence: true
+
+  scope :for_day, lambda { |day| where(day: day) }
+  scope :for_room, lambda { |room| where(room: room) }
 end

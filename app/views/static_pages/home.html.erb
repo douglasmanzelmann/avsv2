@@ -1,33 +1,47 @@
-<h1>
-  <%= link_to '<<', date: @date.prev_day %>
-  <%= @date.strftime('%A, %B %d, %Y') %>
-  <%= link_to '>>', date: @date.next_day %>
-</h1>
+<div class="row">
+  <h1>
+    <%= link_to '<<', date: @date.prev_day %>
+    <%= @date.strftime('%A, %B %d, %Y') %>
+    <%= link_to '>>', date: @date.next_day %>
+  </h1>
+</div>
 
-<table class="table table-striped table-bordered" id="task-table">
-  <thead>
-    <tr>
-      <th>Room</th>
-      <th>Time</th>
-      <th>Gear</th>
-      <th>Preset</th>
-      <th>Setup</th>
-      <th>Strike</th>
-      <th>Notes</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @tasks.each do |task| %>
-      <tr>
-        <td><%= task.room %></td>
-        <td><%= task.begin_time %> - 
-            <%= task.end_time %></td>
-        <td><%= task.gear %></td>
-        <td><%= task.preset %></td>
-        <td><%= task.setup %></td>
-        <td><%= task.strike %></td>
-        <td><%= task.notes %></td>
-      </tr>
-    <% end %>    
-  </tbody>
-</table>
+<div class="row">
+  <div class="span8" id="task-table">
+    <table class="table table-striped table-bordered span8">
+      <thead>
+        <tr>
+          <th>Room</th>
+          <th>Time</th>
+          <th>Gear</th>
+          <th>Preset</th>
+          <th>Setup</th>
+          <th>Strike</th>
+          <th>Notes</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @tasks.each do |task| %>
+          <tr>
+            <td><%= task.room %></td>
+            <td><%= task.begin_time %> - 
+                <%= task.end_time %></td>
+            <td><%= task.gear %></td>
+            <td><%= task.preset %></td>
+            <td><%= task.setup %></td>
+            <td><%= task.strike %></td>
+            <td><%= task.notes %></td>
+          </tr>
+        <% end %>    
+      </tbody>
+    </table>
+  </div>
+
+  <div class="well span2" id="new-task">
+    <%= form_for(@task) do |t| %>
+      <%= render 'shared/task_form', t: t %>
+
+      <%= t.submit "Create task", class: "btn btn-large btn-primary" %>
+    <% end %>
+  </div>
+</div>

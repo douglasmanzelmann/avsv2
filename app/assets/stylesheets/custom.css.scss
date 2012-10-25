@@ -67,5 +67,19 @@ p {
   &:hover {
     color: white;
     text-decoration: none;
+  }  
+}
+
+/* static_pages#home */
+
+#task-table {
+  margin-right: 25px;
+}
+
+#new-task {
+  .medium-field {
+    width: 125px;
   }
+
+  margin-left: 15px;
 }
