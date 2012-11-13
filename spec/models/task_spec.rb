@@ -46,5 +46,12 @@ describe Task do
   it "has a valid factory" do
     FactoryGirl.create(:task).should be_valid
   end
-  
-end
+
+  context "when a task is added the next day in the same room with the same gear" do 
+    let!(:task1) { FactoryGirl.create(:task) }
+    let!(:task2) { FactoryGirl.create(:task, day: Date.tomorrow) }
+    subject { task1 }
+
+    its(:notes) { should == "There is a meeting in this room tomorrow."}
+  end  
+end 
